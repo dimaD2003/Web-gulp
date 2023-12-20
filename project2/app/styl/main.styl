@@ -1,0 +1,154 @@
+// Please delete before starting
+$fontSize = 18px
+$bgcMenu=#929090
+$bgcFooter= #808080
+$grid = 2/4
+$gap = 5px
+$mw= 700px
+
+bgc_partners(size, src)
+	grid-column: unquote(size)
+	background-image: url(src)
+	background-size: 100% 100%
+	background-repeat: no-repeat
+
+
+
+.container
+	border 1px solid black
+	margin auto
+	width 80%
+
+
+
+.menu
+	font-size $fontSize
+	display: grid
+	grid-template-columns: 7fr 1fr 1fr 1fr
+	padding 10px
+	background-color $bgcMenu
+	justify-content space-between
+a
+	text-decoration none
+	color: black
+	font-size $fontSize
+
+	&.active
+		color rebeccapurple
+
+
+
+.contant_partners
+	margin: 5px auto 15px
+	width: 90%
+	display: grid
+	grid-template-columns: repeat(4, 1fr)
+	gap: $gap
+   
+.contant_partners_item
+	width: 100%
+	height: 250px
+   
+
+
+.contant_partners_item:nth-child(1)
+	bgc_partners("1/2" , "../img/Partners/24.jpg")
+  
+	
+
+.contant_partners_item:nth-child(2)
+	bgc_partners("2/4" , "../img/Partners/zogby-international-companies-photo-1.jpg")
+	
+
+.contant_partners_item:nth-child(3)
+	bgc_partners("4/5" , "../img/Partners/23.jpg")
+	
+.contant
+	h3
+		font-size: 1.5vw
+
+.contant_top
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	grid-template-rows: 1fr
+	overflow: hidden
+	width: 90%
+	margin: auto
+	gap: $gap
+
+.contant_top_item
+	text-align: center
+	background-color: rgba(193, 188, 188, 0.241)
+	max-height: 500px
+	overflow: hidden
+	display: -webkit-box
+	-webkit-line-clamp: 16
+	-webkit-box-orient: vertical
+
+.contant_top_item img
+	margin: 20px auto
+	min-width: 80px
+	max-height: 50px
+	border: 1px solid rgba(118, 115, 115, 0.384)
+	display: block
+
+.contant_top_item_dscr
+	text-align: justify
+	padding: 0 20px
+
+.footer
+	margin-top: 10px
+	display: grid
+	grid-template-columns: 1fr 2fr 1fr
+	grid-template-rows: 1fr
+	background-color: $bgcFooter
+	font-weight: bold
+	font-size: 1vw
+
+.footer_item
+	grid-column: 1/2
+	padding: 0px 5px
+
+.footer_item_call
+	grid-column: 3/4
+	justify-self: right
+	padding: 0px 5px
+
+.call img
+	padding: 0px 5px
+
+
+@media (max-width : $mw)
+	.menu
+		grid-template-columns: 1fr 1fr
+		grid-template-rows: 1fr 1fr
+		text-align: center
+		background-color: #fff
+
+	.menu_logo
+		text-align: center	
+
+@media (max-width : $mw)
+	.contant_partners
+		display: block
+
+	.contant_partners_item
+		margin: $gap 0px
+
+@media (max-width: $mw)
+	.contant_top
+		display: block
+
+	.contant_top_item
+		margin: 10px $gap
+
+@media (max-width: $mw)
+	.footer
+		font-size: 10px
+		display: block
+		margin: auto
+
+	.footer_item
+	.footer_item_call
+		text-align: center
+		padding: 1px
